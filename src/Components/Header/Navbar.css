@@ -1,0 +1,258 @@
+/* =========================
+   DESKTOP NAVBAR
+========================= */
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 160px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  box-shadow: 0 10px 33px rgba(0, 0, 0, 0.1);
+}
+
+/* Left section */
+.logoLinkContainer {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* LOGO */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoContainer img {
+  height: 38px;        /* 🔥 SMALL & FIT LOGO */
+  width: auto;
+  object-fit: contain;
+  background: none;
+  cursor: pointer;
+}
+
+/* NAV LINKS */
+.linkContainer ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.linkContainer ul li {
+  list-style: none;
+}
+
+.linkContainer ul li a {
+  text-decoration: none;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+}
+
+/* Hover underline */
+.linkContainer ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #1b1b1b;
+  transition: width 0.3s ease;
+}
+
+.linkContainer ul li a:hover::after {
+  width: 60%;
+}
+
+/* RIGHT ICONS */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.iconContainer svg {
+  cursor: pointer;
+}
+
+.iconContainer a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+.mobile-nav {
+  display: none;
+}
+
+@media screen and (max-width: 1210px) {
+  .navBar {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .logoContainer img {
+    height: 30px; /* smaller logo on mobile */
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .mobile-nav {
+    padding: 15px;
+  }
+
+  .logoContainer img {
+    height: 26px;
+  }
+}
+
+/* =========================
+   MOBILE MENU PANEL
+========================= */
+
+.mobile-menu {
+  position: absolute;
+  top: 74px;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 9;
+  border-top: 1px solid #e4e4e4;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+}
+
+/* Search bar */
+.mobile-menuSearchBar {
+  padding: 20px;
+}
+
+.mobile-menuSearchBarContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+}
+
+.mobile-menuSearchBarContainer input {
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+}
+
+.mobile-menuSearchBarContainer a {
+  color: black;
+  display: flex;
+}
+
+/* Menu Links */
+.mobile-menuList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mobile-menuList ul li {
+  padding: 12px 20px;
+}
+
+.mobile-menuList ul li a {
+  text-decoration: none;
+  color: #1b1b1b;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Footer */
+.mobile-menuFooter {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Login */
+.mobile-menuFooterLogin a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.mobile-menuFooterLogin p {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Language & Currency */
+.mobile-menuFooterLangCurrency {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-menuFooterLang,
+.mobile-menuFooterCurrency {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.mobile-menuFooterLang select,
+.mobile-menuFooterCurrency select {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+/* Social Icons */
+.mobile-menuSocial_links {
+  display: flex;
+  gap: 30px;
+  width: 240px;
+}
+
+.mobile-menuSocial_links svg {
+  cursor: pointer;
+}
